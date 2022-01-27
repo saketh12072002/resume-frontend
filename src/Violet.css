@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap");
+
+*{
+  background-color: #FFF89A;
+}
+
+.headinng{
+  padding-top: 30px;
+  z-index: 0;
+  position:relative;
+}
+
+h1{
+  text-align: center;
+  color: black;
+  font-size:50px;
+  font-family: DM Sans;
+  padding-top: 5px;
+}
+
+.undeerline{
+  text-align: center;
+  padding-left: 240px;
+  position: relative;
+  top: -6px;
+  z-index: 1;
+}
+.starr{
+  text-align: center;  
+}
+
+.ratiing{
+  margin-left: 20px;
+}
+.revieew{
+  justify-content: center;
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+#accrooss{
+  margin-top: -25px;
+  position: relative;
+  z-index: 0;
+}
