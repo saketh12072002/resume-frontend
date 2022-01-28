@@ -68,7 +68,7 @@ export const Header = () => {
 }
 
 const Container=styled.div`
-height: 8395px;
+height: 2395px;
 
 width: 1ref;
 border-radius: 0px;
