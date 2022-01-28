@@ -1,0 +1,9 @@
+
+.img-container {
+    width: 45%;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}

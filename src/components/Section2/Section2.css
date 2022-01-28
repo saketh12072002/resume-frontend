@@ -1,0 +1,10 @@
+.container {
+    margin: auto 10%;
+    flex-direction: column;
+    display: flex;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 5%;
+}
