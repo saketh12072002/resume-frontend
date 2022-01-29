@@ -1,10 +1,10 @@
-.container {
+.Section2 .container {
     margin: auto 10%;
     flex-direction: column;
     display: flex;
 }
 
-.row {
+.Section2 .row {
     display: flex;
     margin-bottom: 5%;
 }

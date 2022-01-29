@@ -1,0 +1,119 @@
+.footer-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+    margin: auto 10%;
+}
+
+.footer-header hr {
+    margin: 5% auto;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.footer .container {
+    margin: 2.5% 10%;
+    flex-direction: column;
+    display: flex;
+}
+
+.footer .row {
+    display: flex;
+    margin-bottom: 5%;
+    justify-content: space-between;
+}
+
+.form {
+    flex-basis: 60%;
+}
+
+.form label p {
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group input {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    flex-basis: 70%;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-nav {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links-header {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-links-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-part {
+    flex-basis: 47.5%;
+}
+
+.footer .row:nth-child(2) {
+    justify-content: center;
+}
+
+.footer-copyright p {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-feature-settings: 'salt'on, 'liga'off;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1016px) {
+    .footer-header {
+        font-size: 1.5rem;
+    }
+
+    .footer-links-header,
+    .form label p {
+        font-size: 1rem;
+    }
+
+    .button,
+    .footer a {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media screen and (max-width: 795px) {
+    .footer-links-header,
+    .form label p {
+        font-size: 0.7rem !important;
+    }
+
+    .input-group input,
+    .button,
+    .footer a {
+        font-size: 0.5rem !important;
+    }
+
+    .footer-copyright p {
+        font-size: 0.8rem;
+    }
+}

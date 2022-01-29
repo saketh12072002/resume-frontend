@@ -1,0 +1,11 @@
+.button {
+    flex-basis: 27.5%;
+    padding: 0.5rem;
+    border: none;
+    background: #FFC900;
+    border-radius: 7px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
