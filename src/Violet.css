@@ -138,3 +138,13 @@ h1{
     margin-top: 100px;
   }
 }
+
+.arroow{
+  position: relative;
+  text-align: center;
+  top: 120px;
+}
+
+#diviide{
+  margin: 0 10px;
+}
