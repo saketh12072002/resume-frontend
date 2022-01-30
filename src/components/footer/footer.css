@@ -1,0 +1,128 @@
+.main-container {
+    height: 374px;
+    margin-top:-50px;
+    width: 1ref;
+    border-radius: 0px;
+    background: #041562;
+    position: relative;
+    display:flex;
+    justify-content:center;
+}
+
+.content {
+    height: 274px;
+    margin-top:-50px;
+    width:1400px;
+    border-radius: 0px;
+    background: #041562;
+    position: relative;
+    border-top:solid white 02px;
+}
+
+.new-head {
+    text-align:left;
+    color:white;
+    font-family: DM Sans;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin:15px 0px;
+}
+
+.side-content {
+    display: flex;
+}
+
+.logo {
+    text-align:left;
+    font-family: DM Sans;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:white;
+    margin:30px 0px;
+}
+
+.news-class {
+    display: flex;
+}
+
+.btn-class {
+    background: #FFC900;
+    border-radius: 7px;
+    height: 69px;
+    width: 239px;
+    left: 825px;
+    top: 8159px;
+    border-radius: 7px;
+    padding: 10px;
+    font-family: DM Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-left:15px;
+}
+
+.input-section {
+    height: 69px;
+    width: 563px;
+    left: 242px;
+    top: 8159px;
+    border-radius: 5px;
+    border:none;
+    font-family: DM Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.links {
+    display: inline;
+    margin: 0px 30px;
+}
+
+.subheading {
+    font-family: DM Sans;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin:10px 0px;
+    color:white;
+}
+
+.link {
+    display:block;
+    font-family: DM Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: left;
+    color:white;
+    padding:7px 0px;
+}
+
+.copywrite-section {
+    margin: 60px 0px;
+    color:white;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 0em;
+}
