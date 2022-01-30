@@ -7,14 +7,14 @@
     flex-basis: 28%;
     text-align: right;
     margin-right: 1%;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: rgba(255, 248, 154, 0.6);
 }
 
 .txt-container {
     margin-top: 2%;
     color: rgba(255, 248, 154, 0.6);
-    font-size: 2rem;
+    font-size: 1.75rem;
     flex-basis: 70%;
     text-align: left;
     margin-left: 1%;
@@ -22,12 +22,12 @@
 
 .highlight-num {
     color: #fff89a;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .highlight-txt {
     color: #ffc900;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
 }
 
 @media screen and (max-width: 1136px) {

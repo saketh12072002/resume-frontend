@@ -5,6 +5,7 @@
 }
 
 .Section2 .row {
+    justify-content: space-between;
     display: flex;
     margin-bottom: 5%;
 }
