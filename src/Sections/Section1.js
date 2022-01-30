@@ -3,7 +3,7 @@ import styled from "styled-components"
 import RectangleS from "../Images/RectangleS 1 (1).png"
 import RectangleS1 from "../Images/RectangleS 3 (1).png"
 import RectangleS2 from "../Images/RectangleS 4.png"
-
+import { motion } from 'framer-motion';
 
 export const Section1 = () => {
   return (
@@ -20,9 +20,12 @@ export const Section1 = () => {
 
 
 </Rectangle>
-<Button>
+<Button whileHover={{scale:1.4}}>
 Use This Template
 </Button>
+
+
+
 </Container>
 
 
@@ -43,7 +46,7 @@ background-color: #FFF89A;
 const Head=styled.div`
 color:black;
 text-align:center;
-border:solid red 1px;
+
 font-family: DM Sans;
 font-size: 36px;
 font-style: normal;
@@ -94,7 +97,7 @@ img{
 }
 `;
 
-const Button= styled.button`
+const Button= styled(motion.button)`
 margin-top:50px;
 padding: 10px;
 border:none;

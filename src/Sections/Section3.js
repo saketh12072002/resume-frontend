@@ -7,6 +7,7 @@ import Picture from "../Images/Picture (3).png"
 import Left from "../Images/Left.png"
 import Right from "../Images/Right.png"
 import Vertical from "../Images/Vertical.png"
+import { motion } from 'framer-motion';
 
 export const Section3 = () => {
   return (
@@ -70,7 +71,7 @@ export const Section3 = () => {
 
                    </CardSection>
                    <Proceed>
-                   <Button>
+                   <Button >
                          <img src={Left}/>
                     </Button>
                     <img src={Vertical}/>
@@ -205,7 +206,7 @@ margin-top:50px;
 const Proceed=styled.div`
 margin-top:150px;
 `;
-const Button =styled.button`
+const Button =styled(motion.button)`
 
 background:transparent;
 border:none;

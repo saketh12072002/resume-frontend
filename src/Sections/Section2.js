@@ -2,9 +2,48 @@ import React from 'react';
 import styled from "styled-components"
 import Stripe2 from "../Images/stripe2.png"
 import Rectangle from "../Images/RectangleSec2.png"
+import { animate, motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+
 export const Section2 = () => {
+   const {ref, inView} = useInView({
+        threshold:0.2
+
+   });
+
+   const animation = useAnimation();
+   useEffect(()=>{
+
+                 if(inView){
+                        animation.start({
+                         x:-10,
+                         opacity: 1,
+                         transition:{
+                           type:'spring',duration:1,bounce:0.3
+                         }
+                        });
+                 }
+                 if(!inView){
+                           animation.start({
+                              x:-180,
+                             opacity:0,
+
+                           })
+                 }
+
+
+             console.log("use effect hook, inView =",inView);
+   },[inView]);
+   const slide={
+      visible:{x:0,opacity: 1,scale:1},
+      viewport:{ once: true },
+      hidden : {x :-150 ,opacity: 0,scale:0},
+      transition:{ duration: 1 }
+   }
   return (
-        <Container>
+        <Container   ref={ref}>
              <Head>
              Effortlessly make
           
@@ -19,17 +58,26 @@ export const Section2 = () => {
                    <img src={Rectangle}/>
 
                 <List>
-                       <ListItem>
+                  <ListItem 
+                 
+                  // variants={slide} 
+                  // initial="hidden"
+                  // animate="visible"
+                  // whileInView="visible"
+                   animate={animation}
+                  >
                          <Num>
                            01
-                          </Num> 
+                         </Num> 
                          <Big>
                              Select your resume from the category
                         </Big>
-                       </ListItem>
+                   </ListItem>
                   
             
-                    <ListItem>
+                    <ListItem
+                    animate={animation}
+                    >
                       <Snum>
                        02
                     </Snum>
@@ -38,7 +86,10 @@ export const Section2 = () => {
                     </Small>
                     </ListItem>
                
-                    <ListItem>
+                    <ListItem
+                    animate={animation}
+                    
+                    >
                     <Snum>
                        03
                     </Snum>
@@ -52,7 +103,9 @@ export const Section2 = () => {
                  <Feature>
                    <img src={Rectangle}/>
                    <List>
-                       <ListItem>
+                       <ListItem
+                         animate={animation}
+                       >
                        <Snum>
                        01
                     </Snum>
@@ -60,7 +113,9 @@ export const Section2 = () => {
                     Select your resume from<br/> the category
                     </Small>
                        </ListItem>
-                       <ListItem>
+                       <ListItem
+                         animate={animation}
+                       >
                          <Num>
                            02
                           </Num> 
@@ -68,7 +123,9 @@ export const Section2 = () => {
                          Update your info <br/>on the dashboard 
                         </Big>
                        </ListItem>
-                       <ListItem>
+                       <ListItem
+                          animate={animation}
+                       >
                        <Snum>
                        03
                     </Snum>
@@ -82,8 +139,10 @@ export const Section2 = () => {
                  </Feature>
                  <Feature>
                    <img src={Rectangle}/>
-                   <List>
-                   <ListItem>
+                   <List >
+                   <ListItem
+                   animate={animation}
+                   >
                          <Snum>
                            01
                           </Snum> 
@@ -92,7 +151,10 @@ export const Section2 = () => {
                         </Small>
                        </ListItem>
 
-                   <ListItem>
+                   <ListItem
+                      animate={animation}
+                   
+                   >
                       <Snum>
                        02
                     </Snum>
@@ -100,21 +162,17 @@ export const Section2 = () => {
                        Update your info <br/>on the dashboard 
                     </Small>
                     </ListItem>
-                       <ListItem>
-
-
-
-
-
-
-                   <Num>
+                     <ListItem
+                       animate={animation}
+                     >
+                     <Num>
                        03
                     </Num>
                     <Big>
                     Download the<br/>resume just in a click
                     </Big>
-                       </ListItem>
-                       </List>
+                    </ListItem>
+                  </List>
                  </Feature>
              </Features>
         </Container>
@@ -200,7 +258,7 @@ font-weight: bold;
 font-size:150px;
 color: #FFF89A;
 `;
-const ListItem=styled.div`
+const ListItem=styled(motion.div)`
 display:flex;
 `;
 const Small=styled.div`

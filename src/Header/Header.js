@@ -8,10 +8,46 @@ import Rectangle2 from "../Images/Rectangle 2.png"
 import No1 from "../Images/No1.png"
 import Vector2 from "../Images/Vector (2).png"
 import Vector3 from "../Images/Vector (3).png"
-
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import {useInView} from 'react-intersection-observer'
+import { useAnimation } from 'framer-motion';
 import Rectangle3 from "../Images/Rectangle 3.png"
 
 export const Header = () => {
+
+    const {ref, inView} = useInView({
+        threshold:0.2
+
+   });
+   const animation = useAnimation();
+   useEffect(()=>{
+
+                 if(inView){
+                        animation.start({
+                         x:-10,
+                         opacity: 1,
+                         transition:{
+                           type:'spring',duration:1,bounce:0.3
+                         }
+                        });
+                 }
+                 if(!inView){
+                           animation.start({
+                              x:-180,
+                             opacity:0,
+
+                           })
+                 }
+
+
+             console.log("use effect hook, inView =",inView);
+   },[inView]);
+
+
+
+
+
     return (
         <Container>
             <Nav>
@@ -29,27 +65,40 @@ export const Header = () => {
                
             </Nav>
             <Container1>
-            <CenterTag>
+            <CenterTag
+               initial={{opacity:0}}
+               animate={{opacity:1}}
+               transition={{delay:1.5,duration:1.5}}
+            
+            >
             Build your amazing <br/> resume just with a click
            
             </CenterTag>
-            <ImgBox>
+            <ImgBox
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{delay:1.5,duration:1.5}}
+            >
             <img src={Stripe}/>
-            <img src={Vector}/>
+            <img className='hand' src={Vector}/>
             </ImgBox>
                <Details>
                Use professional field-tested resume templates that follow the exact ‘resume rules’ employers look for. Easy to use and done within minutes - try now for free!
                </Details>
-              <Button1>
+              <Button1 whileHover={{scale:1.3}}>
                   Create My Resume
               </Button1>
             </Container1>
            
           <Conatiner2>
-              <Rectangle>
-                   <img className='img1' src={Rectangle1}/>
-                   <img className='img2' src={Rectangle2}/>
-                   <img className='img3' src={Rectangle3}/> 
+              <Rectangle 
+               
+               >
+                   <motion.img className='img3'  ref={ref} 
+                   animate={{rotate : -10}} 
+                  src={Rectangle1}/>
+                   <motion.img className='img2'  ref={ref}  animate={{rotate : -190}} src={Rectangle2}/>
+                   <motion.img className='img1'  ref={ref} animate={{rotate : -190}} src={Rectangle3}/> 
               </Rectangle>
               <Features>
                    <Feature>
@@ -116,7 +165,7 @@ line-height: 62px;
 letter-spacing: 0em;
 text-align: left;
 `;
-const CenterTag=styled.h1`
+const CenterTag=styled(motion.h1)`
 font-family: DM Sans;
 font-size: 78px;
 font-style: normal;
@@ -129,7 +178,7 @@ color:white;
 
 
 `;
-const Button = styled.button`
+const Button = styled(motion.button)`
 margin-top:10px;
 font-family: DM Sans;
 font-size: 24px;
@@ -154,11 +203,14 @@ height: 700px;
 margin-left: 250px;
 margin-top: 201px;
 `;
-const ImgBox=styled.div`
+const ImgBox=styled(motion.div)`
 
 display:flex;
 justify-content:center;
-
+.hand{
+    padding-top:20px;
+    padding-left:10px;
+}
 `;
 const Details=styled.div`
 margin-top:54px;
@@ -171,7 +223,7 @@ letter-spacing: 0em;
 text-align: center;
 color: #FFF89A;
 `;
-const Button1=styled.button`
+const Button1=styled(motion.button)`
 margin-top:58px;
 font-family: DM Sans;
 font-size: 24px;
@@ -197,19 +249,26 @@ display:flex;
 
 `;
 
-const Rectangle=styled.div`
-margin-left:100px;
+const Rectangle=styled(motion.div)`
+margin-left:200px;
 img{
   position:absolute;
 }
-img1{
-    transform: matrix(0.99, 0.12, -0.1, 0.99, 0, 0);
+.img1{
+    margin-top :20px;
+    margin-left: 60px;
+    // transform: matrix(0.99, 0.12, -0.1, 0.99, 0, 0);
 }
-img2{
-    transform: matrix(1, -0.06, 0.06, 1, 0, 0);
+.img2{
+   
+    margin-top :90px;
+    margin-left: -13px;
+    // transform: matrix(1, -0.06, 0.06, 1, 0, 0);
 }
-img3{
-    transform: matrix(0.97, -0.27, 0.24, 0.96, 0, 0);
+.img3{
+    margin-top:90px;
+    margin-left: -133px;
+    // transform: matrix(0.97, -0.27, 0.24, 0.96, 0, 0);
 }
 `;
 const Features=styled.div`
@@ -229,8 +288,9 @@ color :white;
 
 `;
 const Feature=styled.div`
-img{width:82px;
-margin-right:10px;
+img{width:102px;
+height:90px;
+margin-right:30px;
 }
 display:flex;
 width:650px;
