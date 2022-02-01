@@ -8,10 +8,57 @@ import Left from "../Images/Left.png"
 import Right from "../Images/Right.png"
 import Vertical from "../Images/Vertical.png"
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export const Section3 = () => {
+    const {ref, inView} = useInView({
+        threshold:0.2
+      });
+      const animation = useAnimation();    
+      const animation1 = useAnimation();    
+
+      useEffect(()=>{
+
+        if(inView){
+               animation.start({
+                x:50,
+                opacity: 1,
+                transition:{
+                  type:'spring',duration:1,bounce:0.3
+                }
+               });
+               animation1.start({
+                   x:-50,
+                   opacity: 1,
+                   transition:{
+                     type:'spring',duration:1,bounce:0.3
+                   }
+               })
+
+        }
+        if(!inView){
+                  animation.start({
+                    x:0,
+                   opacity:0,
+
+                  })
+                  animation1.start({
+                      x:0,
+                      opacity:1
+                  })
+        }
+
+
+    console.log("use effect hook, inView =",inView);
+},[inView]);
+
+
+
+    
   return (
-      <Container>
+      <Container >
                    <Head>
                    Trusted by students <br/><img className='Stripe' src={Stripe3}/> accross nation
                    </Head>
@@ -30,8 +77,8 @@ export const Section3 = () => {
                         
   
                    </Reviews>
-                   <CardSection>
-                   <Card>
+                   <CardSection ref={ref}>
+                   <Card animate={animation}>
                        <Heading>
                        Efficient Collaborating
                       </Heading>
@@ -49,7 +96,7 @@ export const Section3 = () => {
                       </Profile>
 
                    </Card>
-                   <Card>
+                   <Card animate={animation1}>
                    <Heading>
                        Efficient Collaborating
                       </Heading>
@@ -145,7 +192,7 @@ display:flex;
 justify-content:space-evenly;
 margin-top:98px;
 `;
-const Card=styled.div`
+const Card=styled(motion.div)`
 height: 256px;
 width: 508px;
 left: 403px;

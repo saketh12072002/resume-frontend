@@ -6,8 +6,54 @@ import { MyAccordian } from './Accordian/MyAccordian';
 import {motion} from "framer-motion"
 import Stripe from "../Images/stripe2.png"
 
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+
 export const Section4 = () => {
     const [data, setData] = useState(questions);
+    const {ref, inView} = useInView({
+      threshold:0.2
+    });
+    const animation = useAnimation();    
+    const animation1 = useAnimation();    
+
+    useEffect(()=>{
+
+      if(inView){
+             animation.start({
+              x:50,
+              opacity: 1,
+              transition:{
+                type:'spring',duration:1,bounce:0.3
+              }
+             });
+             animation1.start({
+                 x:-50,
+                 opacity: 1,
+                 transition:{
+                   type:'spring',duration:1,bounce:0.3
+                 }
+             })
+
+      }
+      if(!inView){
+                animation.start({
+                  x:0,
+                 opacity:0,
+
+                })
+                animation1.start({
+                    x:0,
+                    opacity:1
+                })
+      }
+
+
+  console.log("use effect hook, inView =",inView);
+},[inView]);
+
+
+
 
   return (
      <Container>
@@ -18,7 +64,7 @@ export const Section4 = () => {
         <img src={Stripe} />
         </Head>
 
-          <QuestionRoom>
+          <QuestionRoom ref={ref}>
           {data.map((curElem) => {
            const { id } = curElem;
 

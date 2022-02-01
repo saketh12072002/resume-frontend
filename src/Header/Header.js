@@ -20,28 +20,52 @@ export const Header = () => {
         threshold:0.2
 
    });
+  
+
    const animation = useAnimation();
+   const animation1 = useAnimation();
+   const animation2 = useAnimation();
+
+
+  
+
    useEffect(()=>{
 
                  if(inView){
                         animation.start({
-                         x:-10,
-                         opacity: 1,
-                         transition:{
-                           type:'spring',duration:1,bounce:0.3
-                         }
+                            rotate : -18,
+                            opacity:1
                         });
+                        animation1.start({
+                            rotate : -18,
+                            opacity:1
+
+                        });
+                        animation2.start({
+                            rotate : -18,
+                            opacity:1
+
+                        });
+
                  }
                  if(!inView){
                            animation.start({
-                              x:-180,
-                             opacity:0,
-
+                             rotate:20,
+                             opacity:0
                            })
+                           animation1.start({
+                            rotate : 40,
+                            opacity:0
+                        });
+                        animation2.start({
+                            rotate : 60,
+                            opacity:0
+                        });
                  }
 
-
              console.log("use effect hook, inView =",inView);
+            
+
    },[inView]);
 
 
@@ -92,13 +116,12 @@ export const Header = () => {
            
           <Conatiner2>
               <Rectangle 
-               
+               ref={ref} 
+
                >
-                   <motion.img className='img3'  ref={ref} 
-                   animate={{rotate : -10}} 
-                  src={Rectangle1}/>
-                   <motion.img className='img2'  ref={ref}  animate={{rotate : -190}} src={Rectangle2}/>
-                   <motion.img className='img1'  ref={ref} animate={{rotate : -190}} src={Rectangle3}/> 
+                   <motion.img className='img3'  animate={animation} src={Rectangle1}/>
+                   <motion.img className='img2'    animate={animation1} src={Rectangle2}/>
+                   <motion.img className='img1'     animate={animation2} src={Rectangle3}/> 
               </Rectangle>
               <Features>
                    <Feature>
@@ -257,18 +280,18 @@ img{
 .img1{
     margin-top :20px;
     margin-left: 60px;
-    // transform: matrix(0.99, 0.12, -0.1, 0.99, 0, 0);
+    transform: matrix(0.99, 0.12, -0.1, 0.99, 0, 0);
 }
 .img2{
    
     margin-top :90px;
     margin-left: -13px;
-    // transform: matrix(1, -0.06, 0.06, 1, 0, 0);
+     transform: matrix(1, -0.06, 0.06, 1, 0, 0);
 }
 .img3{
     margin-top:90px;
     margin-left: -133px;
-    // transform: matrix(0.97, -0.27, 0.24, 0.96, 0, 0);
+     transform: matrix(0.97, -0.27, 0.24, 0.96, 0, 0);
 }
 `;
 const Features=styled.div`
