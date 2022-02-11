@@ -107,7 +107,7 @@ export const Header = () => {
             <img className='hand' src={Vector}/>
             </ImgBox>
                <Details>
-               Use professional field-tested resume templates that follow the exact ‘resume rules’ employers look for. Easy to use and done within minutes - try now for free!
+               Use professional field-tested resume templates that follow the exact <br/>‘resume rules’ employers look for. Easy to use and done within minutes -<br/> try now for free!
                </Details>
               <Button1 whileHover={{scale:1.3}}>
                   Create My Resume
@@ -196,7 +196,6 @@ font-weight: 700;
 line-height: 101px;
 letter-spacing: 0em;
 text-align: center;
-
 color:white;
 
 
@@ -220,10 +219,10 @@ const Container1=styled.div`
 display:block;
 aligin-items:center;
 position: absolute;
-width: 964px;
+width: 1504px;
 height: 700px;
 
-margin-left: 250px;
+text-aligin:center;
 margin-top: 201px;
 `;
 const ImgBox=styled(motion.div)`

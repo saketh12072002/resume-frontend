@@ -22,7 +22,7 @@ export const Section4 = () => {
       if(inView){
              animation.start({
               x:50,
-              opacity: 1,
+              
               transition:{
                 type:'spring',duration:1,bounce:0.3
               }
@@ -38,7 +38,7 @@ export const Section4 = () => {
       }
       if(!inView){
                 animation.start({
-                  x:0,
+                  x:-10,
                  opacity:0,
 
                 })
@@ -64,11 +64,11 @@ export const Section4 = () => {
         <img src={Stripe} />
         </Head>
 
-          <QuestionRoom ref={ref}>
+          <QuestionRoom ref={ref} >
           {data.map((curElem) => {
            const { id } = curElem;
 
-             return <MyAccordian key={id} {...curElem} />;
+             return <MyAccordian key={id} {...curElem} animate={animation}/>;
            })}
 
             
